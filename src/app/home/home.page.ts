@@ -74,7 +74,7 @@ export class HomePage {
     this.totalPrice = 0;
     for (let item of Object.keys(this.setSelectedPCParts)) {
       // this.totalPrice += this.setSelectedPCParts[item] ? Number.parseInt(this.setSelectedPCParts[item].price.replaceAll(/R\$ (\d*)\.(\d*),\d\d/g, '$1$2')) : 0;
-      this.totalPrice += this.setSelectedPCParts[item] ? Number.parseInt(this.setSelectedPCParts[item].price.replaceAll(/[^\d]/g, '$1$2')) : 0;
+      this.totalPrice += this.setSelectedPCParts[item] ? Number.parseInt(this.setSelectedPCParts[item].price.replaceAll(/[^\d]/g, ''))/100 : 0;
       console.log(this.totalPrice);
       
     }
