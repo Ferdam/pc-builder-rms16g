@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="toolbar-container">
+      <ion-title>
+        PC Builder
+      </ion-title>
+      <div class="total-display">Total: <strong>{{ totalPrice }}</strong></div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="page-root">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blanker</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <div id="container" class="grid">
+    <!-- <pc-part-list [partList]="lstCPUs"></pc-part-list>
+    <pc-part-list [partList]="lstGPUs"></pc-part-list> -->
+    <div *ngFor="let tempPart of getPCPartTypesList()">
+      <ion-button *ngIf="!getSelected(tempPart)" (click)="openPCPartModal(tempPart)">Select {{tempPart}}</ion-button>
+      <div *ngIf="getSelected(tempPart)">
+        CPU Selected:
+        <pc-part [partType]="tempPart" [partInfo]="getSelected(tempPart)" [isSelected]="true"></pc-part>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,4 @@
+<div class="pc-part-item"
+*ngFor="let partItem of partList">
+  <pc-part (onItemRemove)="handleItemRemoved($event)" (onItemSelect)="handleItemSelected($event)" [partType]="partType" [partInfo]="partItem" [isSelected]="partItem.isSelected"></pc-part>
+</div>

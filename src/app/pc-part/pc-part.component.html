@@ -1,0 +1,15 @@
+<div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ partInfo.short_desc }}</ion-card-title>
+      <ion-card-subtitle>{{ partInfo.full_desc }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ partInfo.price }}</p>
+      <div *ngIf="!hideButtons">
+        <ion-button (click)="selectItem()" *ngIf="!isSelected" color="primary" >Select</ion-button>
+        <ion-button (click)="removeItem()" *ngIf="isSelected"  color="danger" >Remove</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
